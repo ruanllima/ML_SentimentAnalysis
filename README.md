@@ -1,4 +1,4 @@
-# Sentiment Analysis with Multiclasses Classification Algorithms
+# Sentiment Analysis with Multiclass Classification Algorithms
 <br>
 
 ## Technologies and dependencies
