@@ -9,9 +9,6 @@
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/stable)
 
 
-
-
-
 <p>The main language used in this project was <strong><i>Python</i></strong>, and the libraries used were</p>
 <ul>
   <li>
@@ -21,16 +18,14 @@
   <li>
   Matplotlib</li>
   <li>
-  re</li>
-  <li>
-  nltk</li>
+  NLTK</li>
 </ul>
 
 <br>
 
 ## Introduction
 
-<p>In this project, various multi-class classification algorithms are implemented to determine the most effective model for sentiment analysis of social media texts. The goal is not only to identify the best algorithm but also to better understand how different text vectorization techniques impact model performance.
+<p>In this project, various classification algorithms are implemented to determine the most effective model for sentiment analysis of social media texts. The goal is not only to identify the best algorithm but also to better understand how different text vectorization techniques impact model performance.
 </p>
 
 ## Dataset
