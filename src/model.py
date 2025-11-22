@@ -11,6 +11,8 @@ from imblearn.combine import SMOTEENN
 from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score
+import joblib
+
 nltk.download("stopwords")
 # execute 'python -m spacy download en_core_web_sm' in cmd to download the package
 nlp = spacy.load("en_core_web_sm")
@@ -76,12 +78,18 @@ X_test = vectorizer.transform(X_test)
 smote_enn = SMOTEENN() 
 X_train, y_train = smote_enn.fit_resample(X_train.toarray(), y_train)
 
+
+# ALGORITHM IMPLEMENTATION (SVM) 
 algorithm = SVC()
-
+# train
 algorithm.fit(X_train, y_train)
+# predict
+# y_pred = algorithm.predict(X_test.toarray())
+# metric
+# accuracy = accuracy_score(y_test, y_pred)
+# print(f"Accuracy is: {accuracy}")
 
-y_pred = algorithm.predict(X_test.toarray())
 
-accuracy = accuracy_score(y_test, y_pred)
-
-print(f"Accuracy is: {accuracy}")
+# ========================== MODEL =============================
+joblib.dump(algorithm   , "model.pkl")
+joblib.dump(vectorizer, "vectorizer.pkl")
