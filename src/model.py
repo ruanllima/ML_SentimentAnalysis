@@ -8,8 +8,12 @@ from nltk.corpus import stopwords
 import spacy
 from sklearn.feature_extraction.text import TfidfVectorizer
 from imblearn.combine import SMOTEENN
+from sklearn.svm import SVC
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import accuracy_score
 nltk.download("stopwords")
-nlp = spacy.load('en_core_web_sm')
+# execute 'python -m spacy download en_core_web_sm' in cmd to download the package
+nlp = spacy.load("en_core_web_sm")
 
 
 # adding dataset
@@ -71,3 +75,13 @@ X_test = vectorizer.transform(X_test)
 # Data balancing by combining SMOTE and ENN.
 smote_enn = SMOTEENN() 
 X_train, y_train = smote_enn.fit_resample(X_train.toarray(), y_train)
+
+algorithm = SVC()
+
+algorithm.fit(X_train, y_train)
+
+y_pred = algorithm.predict(X_test.toarray())
+
+accuracy = accuracy_score(y_test, y_pred)
+
+print(f"Accuracy is: {accuracy}")
